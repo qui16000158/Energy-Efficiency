@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 62151381981615403}
   - component: {fileID: 62151381981615396}
   m_Layer: 5
-  m_Name: Canvas 1
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -701,9 +701,7 @@ MonoBehaviour:
   textPrefabObject: {fileID: 2860648746847764858, guid: 6a7ed817d783ece43aa54aa009520742,
     type: 3}
   receptionTasks: []
-  kitchenTasks:
-  - {fileID: 0}
-  - {fileID: 0}
+  kitchenTasks: []
   meetingRoomTasks: []
   mainOfficeTasks: []
 --- !u!1 &62151382843022794
