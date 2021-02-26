@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class VantagePoint : MonoBehaviour
 {
     public GameObject cameraPointer;
     public Quaternion cameraRot;
+    public UnityEvent OnPlayerEntersLocation;
 
     GameObject player;
     MeshRenderer arrowModel;
@@ -32,6 +34,8 @@ public class VantagePoint : MonoBehaviour
     {
         print("clicked");
         player.GetComponent<PlayerView>().AssignLocation(this.gameObject);
+
+        OnPlayerEntersLocation.Invoke();
     }
 
     void PlayerLocationCheck()
