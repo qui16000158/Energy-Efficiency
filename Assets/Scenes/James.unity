@@ -1394,7 +1394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418997657}
   m_LocalRotation: {x: 0.058213897, y: 0.9234307, z: -0.15533915, w: 0.34605896}
-  m_LocalPosition: {x: -1.17, y: 1.8, z: 8.69}
+  m_LocalPosition: {x: -0.669, y: 1.8, z: -5.607}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2414,6 +2414,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4323397254759887802, guid: 5abc55632f36c5345bd7687ed84e4201,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 418997659}
     - target: {fileID: 5237230579888340589, guid: 5abc55632f36c5345bd7687ed84e4201,
         type: 3}
       propertyPath: m_Name
@@ -3266,7 +3271,7 @@ PrefabInstance:
     - target: {fileID: 7913091923099935421, guid: 09e5395ceccf1354699310072b25c2e2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.72
+      value: 0.16600007
       objectReference: {fileID: 0}
     - target: {fileID: 7913091923099935421, guid: 09e5395ceccf1354699310072b25c2e2,
         type: 3}
@@ -4089,6 +4094,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4323397254759887802, guid: 5abc55632f36c5345bd7687ed84e4201,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 418997659}
     - target: {fileID: 5237230579888340589, guid: 5abc55632f36c5345bd7687ed84e4201,
         type: 3}
       propertyPath: m_Name
@@ -5889,7 +5899,7 @@ PrefabInstance:
     - target: {fileID: 7913091923099935421, guid: 09e5395ceccf1354699310072b25c2e2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.696
+      value: 0.142
       objectReference: {fileID: 0}
     - target: {fileID: 7913091923099935421, guid: 09e5395ceccf1354699310072b25c2e2,
         type: 3}
@@ -6780,6 +6790,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4323397254759887802, guid: 5abc55632f36c5345bd7687ed84e4201,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 418997659}
     - target: {fileID: 5237230579888340589, guid: 5abc55632f36c5345bd7687ed84e4201,
         type: 3}
       propertyPath: m_Name
