@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskName: Lights
   taskDescription: Switch off the main office lights
-  objectTag: OfficeLights
+  objectTag: 
