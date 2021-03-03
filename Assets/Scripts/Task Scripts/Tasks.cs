@@ -14,7 +14,7 @@ public class Tasks : ScriptableObject
 
     private GameObject objectToDisable;
 
-    public string objectTag = null;
+    public string objectTag;
 
 
     GameObject parentObject;
@@ -40,7 +40,7 @@ public class Tasks : ScriptableObject
 
         newTaskText.color = Color.green;
 
-        if (objectTag != null)
+        if (objectTag != "")
         {
             objectToDisable = GameObject.FindGameObjectsWithTag(objectTag)[0];
 
