@@ -6,7 +6,7 @@ public class PlayerView : MonoBehaviour
 {
 
     public GameObject currentVantage;
-    public GameObject playerCamera;
+    GameObject playerCamera;
 
     public float timeToTravel = 0.5f;
     public float timeToTurn = 0.5f;
@@ -14,7 +14,7 @@ public class PlayerView : MonoBehaviour
 
     void Start()
     {
-        
+        playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     void Update()
