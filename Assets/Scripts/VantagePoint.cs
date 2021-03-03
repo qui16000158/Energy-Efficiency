@@ -17,8 +17,8 @@ public class VantagePoint : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        arrowModel = transform.GetChild(0).GetComponent<MeshRenderer>();
-        clickCollider = GetComponent<CapsuleCollider>();
+        arrowModel = transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>();
+        clickCollider = transform.GetChild(0).GetComponent<CapsuleCollider>();
 
         cameraRot = cameraPointer.transform.rotation;
         cameraPointer.SetActive(false);
