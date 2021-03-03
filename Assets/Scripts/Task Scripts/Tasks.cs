@@ -12,6 +12,10 @@ public class Tasks : ScriptableObject
 
     private TextMeshProUGUI newTaskText;
 
+    private GameObject objectToDisable;
+
+    public string objectTag;
+
 
     GameObject parentObject;
 
@@ -35,9 +39,14 @@ public class Tasks : ScriptableObject
         newTaskText.text = newTaskText.text + " - Done!";
 
         newTaskText.color = Color.green;
+
+        objectToDisable = GameObject.FindGameObjectsWithTag(objectTag)[0];
+
+        objectToDisable.SetActive(false);
     }
 }
 
 
 
 
+ 
