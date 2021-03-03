@@ -6,7 +6,7 @@ public class PlayerView : MonoBehaviour
 {
 
     public GameObject currentVantage;
-    public GameObject camera;
+    public GameObject playerCamera;
 
     public float timeToTravel = 0.5f;
     public float timeToTurn = 0.5f;
@@ -58,7 +58,7 @@ public class PlayerView : MonoBehaviour
         }
 
         //StartCoroutine(TurnCamera(targetRot));
-        camera.transform.rotation = targetRot;
+        playerCamera.transform.rotation = targetRot;
 
         travelling = false;
     }
@@ -66,12 +66,12 @@ public class PlayerView : MonoBehaviour
     IEnumerator TurnCamera(Quaternion targetRot)
     {
         float t2 = 0f;
-        Quaternion currentRot = camera.transform.rotation;
+        Quaternion currentRot = playerCamera.transform.rotation;
 
         while (t2 < timeToTurn)
         {
             t2 += Time.deltaTime;
-            camera.transform.rotation = Quaternion.Lerp(currentRot, targetRot, Mathf.SmoothStep(0, timeToTurn, t2));
+            playerCamera.transform.rotation = Quaternion.Lerp(currentRot, targetRot, Mathf.SmoothStep(0, timeToTurn, t2));
 
             yield return null;
         }
