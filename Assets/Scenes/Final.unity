@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentVantage: {fileID: 0}
-  camera: {fileID: 2108157750}
+  playerCamera: {fileID: 0}
   timeToTravel: 0.5
   timeToTurn: 0.5
 --- !u!4 &371613176
@@ -7693,7 +7693,7 @@ GameObject:
   - component: {fileID: 2108157751}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Player
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
