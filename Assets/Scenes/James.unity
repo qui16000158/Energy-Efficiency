@@ -5206,7 +5206,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentVantage: {fileID: 0}
-  camera: {fileID: 418997657}
   timeToTravel: 0.5
   timeToTurn: 0.5
 --- !u!1001 &1546094199
