@@ -7,7 +7,7 @@ public class PlayerView : MonoBehaviour
 {
 
     public GameObject currentVantage;
-    GameObject previousVantage;
+    public GameObject previousVantage;
     GameObject playerCamera;
 
     public float timeToTravel = 0.5f;
@@ -24,16 +24,31 @@ public class PlayerView : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ReturnToPreviousLocation();
+        }
     }
 
     public void AssignLocation(GameObject nextVantage)
     {
         if (!travelling)
         {
+            if (currentVantage != null)
+            {
+                previousVantage = currentVantage;
+            }
             currentVantage = nextVantage;
 
             StartCoroutine(MoveToNextVantage(nextVantage.transform, nextVantage.GetComponent<VantagePoint>().cameraRot));
+        }
+    }
+
+    public void ReturnToPreviousLocation()
+    {
+        if (previousVantage != null)
+        {
+            AssignLocation(previousVantage);
         }
     }
 
