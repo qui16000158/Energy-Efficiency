@@ -12,7 +12,6 @@ public class PlayerView : MonoBehaviour
 
     public float timeToTravel = 0.5f;
     public float timeToTurn = 0.5f;
-    bool travelling;
 
     public UnityEvent OnStartMoving;
     public UnityEvent OnStopMoving;
@@ -24,17 +23,17 @@ public class PlayerView : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !VantagePoint.isMoving)
         {
             ReturnToPreviousLocation();
         }
     }
 
-    public void AssignLocation(GameObject nextVantage)
+    public void AssignLocation(GameObject nextVantage, bool returning = false)
     {
-        if (!travelling)
+        if (!VantagePoint.isMoving)
         {
-            if (currentVantage != null)
+            if (currentVantage != null && !returning)
             {
                 previousVantage.Add(currentVantage);
             }
@@ -48,7 +47,7 @@ public class PlayerView : MonoBehaviour
     {
         if (previousVantage.Count != 0)
         {
-            AssignLocation(previousVantage[previousVantage.Count-1]);
+            AssignLocation(previousVantage[previousVantage.Count-1], true);
 
             previousVantage.RemoveAt(previousVantage.Count - 1);
         }
@@ -56,7 +55,7 @@ public class PlayerView : MonoBehaviour
 
     IEnumerator MoveToNextVantage(Transform targetPos, Quaternion targetRot)
     {
-        travelling = true;
+        VantagePoint.isMoving = true;
         OnStartMoving.Invoke();
         Vector3 currentPos = transform.position;
         float timeStarted = Time.time;
@@ -70,7 +69,7 @@ public class PlayerView : MonoBehaviour
             yield return null;
         }
         OnStopMoving.Invoke();
-        travelling = false;
+        VantagePoint.isMoving = false;
     }
 
     IEnumerator TurnCamera(Quaternion targetRot)

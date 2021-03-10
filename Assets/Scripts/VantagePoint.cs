@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class VantagePoint : MonoBehaviour
 {
+    public static bool isMoving = false;
+
     public GameObject cameraPointer;
     public Quaternion cameraRot;
     public UnityEvent OnPlayerEntersLocation;
@@ -32,9 +34,12 @@ public class VantagePoint : MonoBehaviour
 
     private void OnMouseDown()
     {
-        player.GetComponent<PlayerView>().AssignLocation(this.gameObject);
+        if (!isMoving)
+        {
+            player.GetComponent<PlayerView>().AssignLocation(this.gameObject);
 
-        OnPlayerEntersLocation.Invoke();
+            OnPlayerEntersLocation.Invoke();
+        }
     }
 
     void PlayerLocationCheck()
