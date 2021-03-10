@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskName: Monitors
   taskDescription: Switch off all monitors
-  objectTag: 
+  objectTag: OfficeMonitors
