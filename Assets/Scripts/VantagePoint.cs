@@ -32,7 +32,6 @@ public class VantagePoint : MonoBehaviour
 
     private void OnMouseDown()
     {
-        print("clicked");
         player.GetComponent<PlayerView>().AssignLocation(this.gameObject);
 
         OnPlayerEntersLocation.Invoke();
@@ -62,5 +61,10 @@ public class VantagePoint : MonoBehaviour
             arrowModel.enabled = true;
             clickCollider.enabled = true;
         }
+    }
+
+    public void ConfirmLocationEnter()
+    {
+        print("Entering" + gameObject.name);
     }
 }

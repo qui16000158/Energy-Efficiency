@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerView : MonoBehaviour
 {
 
     public GameObject currentVantage;
+    GameObject previousVantage;
     GameObject playerCamera;
 
     public float timeToTravel = 0.5f;
     public float timeToTurn = 0.5f;
     bool travelling;
+
+    public UnityEvent OnStartMoving;
+    public UnityEvent OnStopMoving;
 
     void Start()
     {
@@ -19,7 +24,7 @@ public class PlayerView : MonoBehaviour
 
     void Update()
     {
-        //MovementCheck();
+
     }
 
     public void AssignLocation(GameObject nextVantage)
@@ -32,20 +37,10 @@ public class PlayerView : MonoBehaviour
         }
     }
 
-    void MovementCheck()
-    {
-        if (currentVantage != null)
-        {
-            if (transform.position != currentVantage.transform.position)
-            {
-                travelling = true;
-            }
-        }
-    }
-
     IEnumerator MoveToNextVantage(Transform targetPos, Quaternion targetRot)
     {
         travelling = true;
+        OnStartMoving.Invoke();
         Transform currentPos = transform;
         float t = 0f;
 
@@ -59,7 +54,7 @@ public class PlayerView : MonoBehaviour
 
         //StartCoroutine(TurnCamera(targetRot));
         playerCamera.transform.rotation = targetRot;
-
+        OnStopMoving.Invoke();
         travelling = false;
     }
 
@@ -75,5 +70,15 @@ public class PlayerView : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    public void ConfirmStartMoving()
+    {
+        print("Starting movement.");
+    }
+
+    public void ConfirmStopMoving()
+    {
+        print("Stopping movement.");
     }
 }
