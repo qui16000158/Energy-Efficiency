@@ -58,32 +58,29 @@ public class PlayerView : MonoBehaviour
     {
         travelling = true;
         OnStartMoving.Invoke();
-        Transform currentPos = transform;
-        float t = 0f;
+        Vector3 currentPos = transform.position;
+        float timeStarted = Time.time;
 
-        while (t < timeToTravel)
+        StartCoroutine(TurnCamera(targetRot));
+
+        while (Time.time < timeStarted + 1)
         {
-            t += Time.deltaTime;
-            transform.position = Vector3.Lerp(currentPos.position, targetPos.position, Mathf.SmoothStep(0, timeToTravel, t));
+            transform.position = Vector3.Lerp(currentPos, targetPos.position, 1 - ((timeStarted + 1) - Time.time));
 
             yield return null;
         }
-
-        //StartCoroutine(TurnCamera(targetRot));
-        playerCamera.transform.rotation = targetRot;
         OnStopMoving.Invoke();
         travelling = false;
     }
 
     IEnumerator TurnCamera(Quaternion targetRot)
     {
-        float t2 = 0f;
+        float timeStarted = Time.time;
         Quaternion currentRot = playerCamera.transform.rotation;
 
-        while (t2 < timeToTurn)
+        while (Time.time < timeStarted + 1)
         {
-            t2 += Time.deltaTime;
-            playerCamera.transform.rotation = Quaternion.Lerp(currentRot, targetRot, Mathf.SmoothStep(0, timeToTurn, t2));
+            playerCamera.transform.rotation = Quaternion.Lerp(currentRot, targetRot, 1 - ((timeStarted + 1 ) - Time.time));
 
             yield return null;
         }
