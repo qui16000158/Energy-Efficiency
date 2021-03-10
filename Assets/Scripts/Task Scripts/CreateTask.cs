@@ -35,10 +35,27 @@ public class CreateTask : MonoBehaviour
 
     private float mainOfficeOffset = 0;
 
+    public GameObject meetingRoom;
+
+    public GameObject mainOffice;
+
+    public GameObject kitchen;
+
+    public GameObject reception;
+
+
+    private void Awake()
+    {
+        InstantiateTasks(receptionTasks.Length, kitchenTasks.Length, meetingRoomTasks.Length, mainOfficeTasks.Length);
+    }
 
     private void Start()
     {
-        InstantiateTasks(receptionTasks.Length, kitchenTasks.Length, meetingRoomTasks.Length, mainOfficeTasks.Length);
+        mainOffice.SetActive(false);
+
+        kitchen.SetActive(false);
+
+        reception.SetActive(false);
     }
 
     void InstantiateTasks(int numberOfReceptionTasks, int numberOfKitchenTasks, int numberOfMeetingRoomTasks, int numberOfMainOfficeTasks) //Input amounts of tasks for each location by counting the number of elements in each array. There is a seperate array for each location (Reception, Kitchen, MeetingRoom and MainOffice)
