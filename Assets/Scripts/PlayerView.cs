@@ -7,7 +7,7 @@ public class PlayerView : MonoBehaviour
 {
 
     public GameObject currentVantage;
-    public GameObject previousVantage;
+    public List<GameObject> previousVantage;
     GameObject playerCamera;
 
     public float timeToTravel = 0.5f;
@@ -36,7 +36,7 @@ public class PlayerView : MonoBehaviour
         {
             if (currentVantage != null)
             {
-                previousVantage = currentVantage;
+                previousVantage.Add(currentVantage);
             }
             currentVantage = nextVantage;
 
@@ -46,9 +46,11 @@ public class PlayerView : MonoBehaviour
 
     public void ReturnToPreviousLocation()
     {
-        if (previousVantage != null)
+        if (previousVantage.Count != 0)
         {
-            AssignLocation(previousVantage);
+            AssignLocation(previousVantage[previousVantage.Count-1]);
+
+            previousVantage.RemoveAt(previousVantage.Count - 1);
         }
     }
 

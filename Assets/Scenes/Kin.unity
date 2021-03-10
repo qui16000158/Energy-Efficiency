@@ -1503,6 +1503,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1462845857164383530, guid: 09e5395ceccf1354699310072b25c2e2,
         type: 3}
+      propertyPath: returnable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462845857164383530, guid: 09e5395ceccf1354699310072b25c2e2,
+        type: 3}
       propertyPath: OnPlayerEntersLocation.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3281,6 +3286,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1462845857164383530, guid: 09e5395ceccf1354699310072b25c2e2,
         type: 3}
+      propertyPath: returnable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462845857164383530, guid: 09e5395ceccf1354699310072b25c2e2,
+        type: 3}
       propertyPath: OnPlayerEntersLocation.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -4957,6 +4967,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 606517896}
     m_Modifications:
+    - target: {fileID: 1462845857164383530, guid: 09e5395ceccf1354699310072b25c2e2,
+        type: 3}
+      propertyPath: returnable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1462845857164383530, guid: 09e5395ceccf1354699310072b25c2e2,
         type: 3}
       propertyPath: OnPlayerEntersLocation.m_PersistentCalls.m_Calls.Array.size
