@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerView : MonoBehaviour
 {
 
     public GameObject currentVantage;
+    public GameObject previousVantage;
     GameObject playerCamera;
 
     public float timeToTravel = 0.5f;
     public float timeToTurn = 0.5f;
     bool travelling;
+
+    public UnityEvent OnStartMoving;
+    public UnityEvent OnStopMoving;
 
     void Start()
     {
@@ -19,33 +24,38 @@ public class PlayerView : MonoBehaviour
 
     void Update()
     {
-        //MovementCheck();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ReturnToPreviousLocation();
+        }
     }
 
     public void AssignLocation(GameObject nextVantage)
     {
         if (!travelling)
         {
+            if (currentVantage != null)
+            {
+                previousVantage = currentVantage;
+            }
             currentVantage = nextVantage;
 
             StartCoroutine(MoveToNextVantage(nextVantage.transform, nextVantage.GetComponent<VantagePoint>().cameraRot));
         }
     }
 
-    void MovementCheck()
+    public void ReturnToPreviousLocation()
     {
-        if (currentVantage != null)
+        if (previousVantage != null)
         {
-            if (transform.position != currentVantage.transform.position)
-            {
-                travelling = true;
-            }
+            AssignLocation(previousVantage);
         }
     }
 
     IEnumerator MoveToNextVantage(Transform targetPos, Quaternion targetRot)
     {
         travelling = true;
+        OnStartMoving.Invoke();
         Transform currentPos = transform;
         float t = 0f;
 
@@ -59,7 +69,7 @@ public class PlayerView : MonoBehaviour
 
         //StartCoroutine(TurnCamera(targetRot));
         playerCamera.transform.rotation = targetRot;
-
+        OnStopMoving.Invoke();
         travelling = false;
     }
 
@@ -75,5 +85,15 @@ public class PlayerView : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    public void ConfirmStartMoving()
+    {
+        print("Starting movement.");
+    }
+
+    public void ConfirmStopMoving()
+    {
+        print("Stopping movement.");
     }
 }
