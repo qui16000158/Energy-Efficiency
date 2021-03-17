@@ -8,6 +8,8 @@ public class CreateTask : MonoBehaviour
 {
     public TextMeshProUGUI textPrefabObject;
 
+    public TextMeshProUGUI boardTextPrefabObject;
+
 
     public Tasks[] receptionTasks;
 
@@ -44,6 +46,17 @@ public class CreateTask : MonoBehaviour
     public GameObject reception;
 
 
+    private int allTasksNumber = 0;
+
+    private int allTasksDoneNumber;
+
+    public TextMeshProUGUI BoardTaskNumberText;
+
+    private bool boardActive = true;
+
+    public GameObject taskBoard;
+
+
     private void Awake()
     {
         InstantiateTasks(receptionTasks.Length, kitchenTasks.Length, meetingRoomTasks.Length, mainOfficeTasks.Length);
@@ -51,49 +64,126 @@ public class CreateTask : MonoBehaviour
 
     private void Start()
     {
-        mainOffice.SetActive(false);
+        HideAllTasks();
 
-        kitchen.SetActive(false);
+        ToggleBoard();
 
-        reception.SetActive(false);
+        UpdateBoard();
     }
 
     void InstantiateTasks(int numberOfReceptionTasks, int numberOfKitchenTasks, int numberOfMeetingRoomTasks, int numberOfMainOfficeTasks) //Input amounts of tasks for each location by counting the number of elements in each array. There is a seperate array for each location (Reception, Kitchen, MeetingRoom and MainOffice)
     {
         for (int i = 0; i < numberOfReceptionTasks; i++) //There are 4 loops, each of them is for a different office location. Each loop will repeat the cycle depending on the number of tasks there are in the location specified for the loop. The purpose of this loop is to grab tasks in form of scriptable objects from the arrays and instantiate them in the form of text in the game. To do this, a public method is called from the scriptable objects within the arrays. Method name InstantiateText();
         {                                                
-            receptionTasks[receptionTaskNumber].InstantiateText(textPrefabObject, receptionOffset, "Reception"); //Reception Loop
+            receptionTasks[receptionTaskNumber].InstantiateText(textPrefabObject, boardTextPrefabObject, receptionOffset, "Reception"); //Reception Loop
 
             receptionTaskNumber += 1;
 
             receptionOffset += 20f; // Each loop has and offsett float number which increases everytime the loop runs.The purpose of this offset is to create spacing between the instantiated text objects.
+
+            allTasksNumber += 1;
         }
 
         for (int i = 0; i < numberOfKitchenTasks; i++)
         {       
-            kitchenTasks[kitchenTaskNumber].InstantiateText(textPrefabObject, kitchenOffset, "Kitchen"); //Kitchen Loop
+            kitchenTasks[kitchenTaskNumber].InstantiateText(textPrefabObject, boardTextPrefabObject, kitchenOffset, "Kitchen"); //Kitchen Loop
 
             kitchenTaskNumber += 1;
 
             kitchenOffset += 20f;
+
+            allTasksNumber += 1;
+
         }
 
         for (int i = 0; i < numberOfMeetingRoomTasks; i++)
         { 
-            meetingRoomTasks[meetingRoomTaskNumber].InstantiateText(textPrefabObject, meetingRoomOffset, "MeetingRoom"); //MeetingRoom Loop
+            meetingRoomTasks[meetingRoomTaskNumber].InstantiateText(textPrefabObject, boardTextPrefabObject, meetingRoomOffset, "MeetingRoom"); //MeetingRoom Loop
 
             meetingRoomTaskNumber += 1;
 
             meetingRoomOffset += 20f;
+
+            allTasksNumber += 1;
+
         }
 
         for (int i = 0; i < numberOfMainOfficeTasks; i++)
         {
-            mainOfficeTasks[mainOfficeTaskNumber].InstantiateText(textPrefabObject, mainOfficeOffset, "MainOffice"); //MainOffice Loop
+            mainOfficeTasks[mainOfficeTaskNumber].InstantiateText(textPrefabObject, boardTextPrefabObject, mainOfficeOffset, "MainOffice"); //MainOffice Loop
 
             mainOfficeTaskNumber += 1;
 
             mainOfficeOffset += 20f;
+
+            allTasksNumber += 1;
+
+        }
+    }
+
+    public void ShowMainOfficeTasks()
+    {
+        HideAllTasks();
+        mainOffice.SetActive(true);
+    }
+
+    public void ShowKitchenTasks()
+    {
+        HideAllTasks();
+        kitchen.SetActive(true);
+    }
+
+    public void ShowReceptionTasks()
+    {
+        HideAllTasks();
+        reception.SetActive(true);
+    }
+
+    public void ShowMeetingRoomTasks()
+    {
+        HideAllTasks();
+        meetingRoom.SetActive(true);
+    }
+
+    public void HideAllTasks()
+    {
+        mainOffice.SetActive(false);
+
+        kitchen.SetActive(false);
+
+        reception.SetActive(false);
+
+        meetingRoom.SetActive(false);
+    }
+
+    public void UpdateBoardClick()
+    {
+        allTasksDoneNumber += 1;
+
+        UpdateBoard();
+    }
+
+    private void UpdateBoard()
+    {
+        if(allTasksDoneNumber == allTasksNumber)
+        {
+            BoardTaskNumberText.color = Color.green;
+        }
+
+        BoardTaskNumberText.text = "Total Tasks Completed: " + allTasksDoneNumber + "/" + allTasksNumber;
+    }
+
+    public void ToggleBoard()
+    {
+        if (boardActive == true)
+        {
+            taskBoard.SetActive(false);
+            boardActive = false;
+        }
+        else
+        {
+            taskBoard.SetActive(true);
+            boardActive = true;
         }
     }
 }

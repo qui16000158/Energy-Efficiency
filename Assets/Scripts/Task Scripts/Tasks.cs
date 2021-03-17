@@ -12,15 +12,26 @@ public class Tasks : ScriptableObject
 
     private TextMeshProUGUI newTaskText;
 
+    private TextMeshProUGUI newBoardTaskText;
+
     private GameObject objectToDisable;
 
+    private GameObject taskObject;
+
     public string objectTag;
+
+    private bool taskComplete;
+
+
 
 
     GameObject parentObject;
 
+    GameObject parentBoardObject;
 
-    public void InstantiateText(TextMeshProUGUI prefabText, float offset, string Location)
+    public bool multipleObjectives;
+
+    public void InstantiateText(TextMeshProUGUI prefabText, TextMeshProUGUI boardPrefabText, float offset, string Location)
     {
         parentObject = GameObject.Find(Location.ToString());
 
@@ -32,19 +43,43 @@ public class Tasks : ScriptableObject
         newTaskText.name = taskName + " Task";
 
         newTaskText.text = taskDescription;
+
+        InstantiateTaskBoardText(Location, boardPrefabText, offset);
+    } 
+
+    public void InstantiateTaskBoardText(string BoardLocation, TextMeshProUGUI boardPrefab, float boardOffset)
+    {
+        parentBoardObject = GameObject.Find("Board" + BoardLocation.ToString());
+
+        newBoardTaskText = Instantiate(boardPrefab, parentBoardObject.transform);
+
+        boardOffset -= 4f;
+
+        newBoardTaskText.transform.position -= Vector3.up * boardOffset;
+
+        newBoardTaskText.name = taskName + "Board Task";
+
+        newBoardTaskText.text = taskDescription;
     }
 
     public void EndTask()
     {
-        newTaskText.text = newTaskText.text + " - Done!";
-
-        newTaskText.color = Color.green;
-
-        if (objectTag != "")
+        if (multipleObjectives == false)
         {
-            objectToDisable = GameObject.FindGameObjectsWithTag(objectTag)[0];
+            newTaskText.text = newTaskText.text + " - Done!";
 
-            objectToDisable.SetActive(false);
+            newTaskText.color = Color.green;
+
+            newBoardTaskText.text = newBoardTaskText.text + " - Done!";
+
+            newBoardTaskText.color = Color.green;
+
+            if (objectTag != "")
+            {
+                objectToDisable = GameObject.FindGameObjectsWithTag(objectTag)[0];
+
+                objectToDisable.SetActive(false);
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - OfficeLights
   - OfficePoster
   - OfficeMonitors
+  - TaskCanvas
   layers:
   - Default
   - TransparentFX

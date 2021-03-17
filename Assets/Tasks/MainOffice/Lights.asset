@@ -15,3 +15,4 @@ MonoBehaviour:
   taskName: Lights
   taskDescription: Switch off the main office lights
   objectTag: OfficeLights
+  multipleObjectives: 0
