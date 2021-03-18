@@ -56,6 +56,8 @@ public class CreateTask : MonoBehaviour
 
     public GameObject taskBoard;
 
+    public GameObject taskCanvas;
+
 
     private void Awake()
     {
@@ -185,5 +187,15 @@ public class CreateTask : MonoBehaviour
             taskBoard.SetActive(true);
             boardActive = true;
         }
+    }
+
+    public void TaskCanvasEnabled()
+    {
+        taskCanvas.SetActive(true);
+    }
+
+    public void TaskCanvasDisabled()
+    {
+        taskCanvas.SetActive(false);
     }
 }

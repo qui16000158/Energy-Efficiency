@@ -22,6 +22,7 @@ public class HighScore : MonoBehaviour
     public void ResetScore()
     {
         playerScore = 0;
+        playerScoreDisplay.text = "Score: " + playerScore;
     }
 
     public void SetPlayerName(string name)
