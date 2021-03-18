@@ -56,6 +56,8 @@ public class QuizManager : MonoBehaviour
 
     public GameObject scoreList;
 
+    public GameObject avatarWindows;
+
 
     private void Start()
     {
@@ -298,5 +300,15 @@ public class QuizManager : MonoBehaviour
         ResetQuiz();
 
         quizCanvas.SetActive(false);
+    }
+
+    public void AvatarWindowsEnabled()
+    {
+        avatarWindows.SetActive(true);
+    }
+
+    public void AvatarWindowsDisabled()
+    {
+        avatarWindows.SetActive(false);
     }
 }

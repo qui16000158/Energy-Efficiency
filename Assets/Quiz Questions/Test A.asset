@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51fed9c503de3244be8455c7bc2cac6, type: 3}
   m_Name: Test A
   m_EditorClassIdentifier: 
-  questionText: How many trees are there in the world
+  questionText: How many trees are there in the world?
   answer_A: Ten
   answer_B: Billions
   answer_C: Millions
