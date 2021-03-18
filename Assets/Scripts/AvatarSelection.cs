@@ -7,7 +7,8 @@ public class AvatarSelection : MonoBehaviour
 {
     [SerializeField]
     Image playerAvatar; // The player's on-screen avatar
-    Sprite avatar; // The avatar for this object
+    [SerializeField]
+    Image avatar; // The avatar for this object
     [SerializeField]
     Sprite checkedSprite; // The sprite for when an avatar is checked (a tick mark)
     [SerializeField]
@@ -20,8 +21,6 @@ public class AvatarSelection : MonoBehaviour
     // Runs before first frame update
     void Start()
     {
-        avatar = GetComponent<Image>().sprite;
-
         // If this avatar is selected switch to the checked sprite, otherwise switch to the unchecked sprite
         if(playerAvatar.sprite == avatar)
         {
@@ -35,7 +34,7 @@ public class AvatarSelection : MonoBehaviour
 
     public void SelectAvatar()
     {
-        playerAvatar.sprite = avatar;
+        playerAvatar.sprite = avatar.sprite;
 
         // Loop through each checkbox and set their sprite to unchecked
         foreach(Image image in checkboxes)
