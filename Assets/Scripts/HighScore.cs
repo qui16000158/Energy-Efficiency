@@ -19,6 +19,11 @@ public class HighScore : MonoBehaviour
     [SerializeField]
     string publicKey = "6050d5d8778d3d7a300659af";
 
+    public void ResetScore()
+    {
+        playerScore = 0;
+    }
+
     public void SetPlayerName(string name)
     {
         playerName = name;
