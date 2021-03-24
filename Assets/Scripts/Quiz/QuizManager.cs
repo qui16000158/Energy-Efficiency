@@ -303,6 +303,8 @@ public class QuizManager : MonoBehaviour
         highScoreManager.GetComponent<HighScore>().ResetScore();
 
         trueOrFalse.gameObject.SetActive(false);
+
+        nextButton.SetActive(false);
     }
 
     public void OpenQuiz()
