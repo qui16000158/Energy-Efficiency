@@ -58,6 +58,16 @@ public class QuizManager : MonoBehaviour
 
     public GameObject avatarWindows;
 
+    public AudioSource audioSource;
+
+    public AudioClip startQuizSound;
+
+    public AudioClip rightAnswerSound;
+
+    public AudioClip wrongAnswerSound;
+
+    public AudioClip endQuizSound;
+
 
     private void Start()
     {
@@ -72,14 +82,15 @@ public class QuizManager : MonoBehaviour
 
         AnswerButtonsVisibleTrue();
 
-        LoadNextQuestion();    
+        LoadNextQuestion();
+
+        PlayStartQuizSound();
     }
 
     public void LoadNextQuestion() //Method used to load the next questions from the Questions Array. Questions are stored as Scriptable Objects.
     {
         if (questions.Length > 0 && questionNumber < questions.Length - 1) //Compares array lenght (number of questions) to current question number to check if there is more questions to load.
         {
-
             questionText.text = questions[questionNumber].questionText;
 
             a.text = questions[questionNumber].answer_A;
@@ -145,12 +156,16 @@ public class QuizManager : MonoBehaviour
             trueOrFalse.text = "Correct!" + "\n" + "+" + questionScore;
 
             trueOrFalse.color = Color.green;
+
+            PlayRightAnswerSound();
         }
         else
         {
             trueOrFalse.text = "False! ";
 
             trueOrFalse.color = Color.red;
+
+            PlayWrongAnswerSound();
         }
     }
 
@@ -263,6 +278,8 @@ public class QuizManager : MonoBehaviour
         trueOrFalse.gameObject.SetActive(false);
 
         HighScoreVisibleTrue();
+
+        PlayEndQuizSound();
     }
 
     public void ResetQuiz() 
@@ -310,5 +327,26 @@ public class QuizManager : MonoBehaviour
     public void AvatarWindowsDisabled()
     {
         avatarWindows.SetActive(false);
+    }
+
+    public void PlayStartQuizSound()
+    {
+        audioSource.PlayOneShot(startQuizSound);
+    }
+
+    public void PlayRightAnswerSound()
+    {
+        audioSource.PlayOneShot(rightAnswerSound);
+    }
+
+    public void PlayWrongAnswerSound()
+    {
+        audioSource.PlayOneShot(wrongAnswerSound);
+
+    }
+
+    public void PlayEndQuizSound()
+    {
+        audioSource.PlayOneShot(endQuizSound);
     }
 }
