@@ -49,6 +49,8 @@ public class PlayerView : MonoBehaviour
         {
             AssignLocation(previousVantage[previousVantage.Count-1], true);
 
+            previousVantage[previousVantage.Count - 1].GetComponent<VantagePoint>().OnPlayerEntersLocation.Invoke();
+
             previousVantage.RemoveAt(previousVantage.Count - 1);
         }
     }
