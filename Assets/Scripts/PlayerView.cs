@@ -47,7 +47,7 @@ public class PlayerView : MonoBehaviour
 
     public void ReturnToPreviousLocation()
     {
-        if (MovementBlocker.IsBlocked) return;
+        if (MovementBlocker.IsBlocked || VantagePoint.isMoving) return;
 
         if (previousVantage.Count != 0)
         {
