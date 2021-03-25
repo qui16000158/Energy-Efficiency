@@ -31,6 +31,8 @@ public class PlayerView : MonoBehaviour
 
     public void AssignLocation(GameObject nextVantage, bool returning = false)
     {
+        if (MovementBlocker.IsBlocked) return;
+
         if (!VantagePoint.isMoving)
         {
             if (currentVantage != null && !returning)
@@ -45,6 +47,8 @@ public class PlayerView : MonoBehaviour
 
     public void ReturnToPreviousLocation()
     {
+        if (MovementBlocker.IsBlocked) return;
+
         if (previousVantage.Count != 0)
         {
             AssignLocation(previousVantage[previousVantage.Count-1], true);

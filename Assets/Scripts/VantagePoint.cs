@@ -35,6 +35,8 @@ public class VantagePoint : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (MovementBlocker.IsBlocked) return;
+
         if (!isMoving)
         {
             player.GetComponent<PlayerView>().AssignLocation(this.gameObject);
