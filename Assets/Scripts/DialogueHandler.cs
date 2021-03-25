@@ -65,7 +65,7 @@ public class DialogueHandler : MonoBehaviour
             textBox.text += input[currentIndex];
 
             currentIndex++;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(1/60.0f);
         }
     }
 }
