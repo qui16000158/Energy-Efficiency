@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d51fed9c503de3244be8455c7bc2cac6, type: 3}
+  m_Name: Q1
+  m_EditorClassIdentifier: 
+  questionText: What is energy efficiency?
+  answer_A: How much energy something uses to achieve a task.
+  answer_B: A video game skill.
+  answer_C: A rare culinary delicacy.
+  correctAnswer: 1
+  scoreAmount: 5

@@ -326,7 +326,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a38c305a8b781fa438ca2e4e59a4c7e6, type: 2}
   - {fileID: 11400000, guid: 72d445b922f5ae94d83f4e669d68c605, type: 2}
   - {fileID: 11400000, guid: 5f8f4ea349be50b478d9953d5d124143, type: 2}
-  - {fileID: 11400000, guid: 5f8f4ea349be50b478d9953d5d124143, type: 2}
   questionText: {fileID: 699131852}
   a: {fileID: 1568029833}
   b: {fileID: 1568886855}
@@ -13178,7 +13177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1350885127
 RectTransform:
   m_ObjectHideFlags: 0
