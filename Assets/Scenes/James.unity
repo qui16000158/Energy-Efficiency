@@ -820,8 +820,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 31152879fdfd8284e9044a6e3b7451c1, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -18001,6 +18001,11 @@ MonoBehaviour:
   scoreLoadButton: {fileID: 1530393669}
   scoreList: {fileID: 2117105060}
   avatarWindows: {fileID: 381174978}
+  audioSource: {fileID: 0}
+  startQuizSound: {fileID: 0}
+  rightAnswerSound: {fileID: 0}
+  wrongAnswerSound: {fileID: 0}
+  endQuizSound: {fileID: 0}
 --- !u!4 &1897603345
 Transform:
   m_ObjectHideFlags: 0
