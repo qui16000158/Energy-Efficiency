@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1159,6 +1159,7 @@ GameObject:
   - component: {fileID: 141889041}
   - component: {fileID: 141889043}
   - component: {fileID: 141889042}
+  - component: {fileID: 141889044}
   m_Layer: 5
   m_Name: SelectScreen
   m_TagString: Untagged
@@ -1224,6 +1225,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141889040}
   m_CullTransparentMesh: 0
+--- !u!114 &141889044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141889040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7254cf08ec51db4c8c30306d800e671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &149513811
 GameObject:
   m_ObjectHideFlags: 0
@@ -13563,6 +13576,7 @@ GameObject:
   - component: {fileID: 1350885130}
   - component: {fileID: 1350885129}
   - component: {fileID: 1350885128}
+  - component: {fileID: 1350885131}
   m_Layer: 0
   m_Name: QuizCanvas
   m_TagString: Untagged
@@ -13650,6 +13664,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1350885131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350885126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7254cf08ec51db4c8c30306d800e671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1355917490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22466,6 +22492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7076439226101483890}
+  - component: {fileID: 7076439226101483891}
   m_Layer: 5
   m_Name: Task Board
   m_TagString: Untagged
@@ -22498,6 +22525,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7076439226101483891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7076439226101483889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7254cf08ec51db4c8c30306d800e671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7076439226909726662
 GameObject:
   m_ObjectHideFlags: 0

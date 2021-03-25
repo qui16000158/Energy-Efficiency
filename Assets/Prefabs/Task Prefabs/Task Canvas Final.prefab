@@ -1655,6 +1655,7 @@ GameObject:
   - component: {fileID: 7127018573484047107}
   - component: {fileID: 7127018573484047106}
   - component: {fileID: 7127018573484047117}
+  - component: {fileID: 8741087699690581022}
   m_Layer: 5
   m_Name: Task Canvas Final
   m_TagString: TaskCanvas
@@ -1744,6 +1745,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8741087699690581022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7127018573484047116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7254cf08ec51db4c8c30306d800e671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7127018573609346000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,6 +1866,7 @@ MonoBehaviour:
   reception: {fileID: 7127018573471710985}
   BoardTaskNumberText: {fileID: 7076439225545604770}
   taskBoard: {fileID: 7076439226853306513}
+  taskCanvas: {fileID: 0}
 --- !u!1 &7127018574116860899
 GameObject:
   m_ObjectHideFlags: 0
