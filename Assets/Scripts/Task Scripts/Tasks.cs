@@ -22,20 +22,18 @@ public class Tasks : ScriptableObject
 
     private bool taskComplete;
 
-
-
-
     GameObject parentObject;
 
     GameObject parentBoardObject;
 
     public bool multipleObjectives;
 
-    public void InstantiateText(TextMeshProUGUI prefabText, TextMeshProUGUI boardPrefabText, float offset, string Location)
+    public void InstantiateText(TextMeshProUGUI prefabText, TextMeshProUGUI boardPrefabText, float offset, string Location) //This method is used to instantiate TMPro task text for the current room
     {
         parentObject = GameObject.Find(Location.ToString());
 
         newTaskText = Instantiate(prefabText, parentObject.transform);
+
         newTaskText.transform.SetParent(parentObject.transform);
 
         newTaskText.transform.position -= Vector3.up * offset;
@@ -47,7 +45,7 @@ public class Tasks : ScriptableObject
         InstantiateTaskBoardText(Location, boardPrefabText, offset);
     } 
 
-    public void InstantiateTaskBoardText(string BoardLocation, TextMeshProUGUI boardPrefab, float boardOffset)
+    public void InstantiateTaskBoardText(string BoardLocation, TextMeshProUGUI boardPrefab, float boardOffset) //This method is used to instantiate TMPro task text on the task board
     {
         parentBoardObject = GameObject.Find("Board" + BoardLocation.ToString());
 
@@ -62,7 +60,7 @@ public class Tasks : ScriptableObject
         newBoardTaskText.text = taskDescription;
     }
 
-    public void EndTask()
+    public void EndTask() //This method is used to mark the task as complete, it will change the tasks text colour to green and add "done" word at the end.
     {
         if (multipleObjectives == false)
         {
@@ -74,7 +72,7 @@ public class Tasks : ScriptableObject
 
             newBoardTaskText.color = Color.green;
 
-            if (objectTag != "")
+            if (objectTag != "") //This if statement is using tag to disable a gameobject once a task is done. 
             {
                 objectToDisable = GameObject.FindGameObjectsWithTag(objectTag)[0];
 

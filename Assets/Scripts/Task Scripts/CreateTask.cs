@@ -10,7 +10,6 @@ public class CreateTask : MonoBehaviour
 
     public TextMeshProUGUI boardTextPrefabObject;
 
-
     public Tasks[] receptionTasks;
 
     public Tasks[] kitchenTasks;
@@ -19,7 +18,6 @@ public class CreateTask : MonoBehaviour
 
     public Tasks[] mainOfficeTasks;
 
-
     private int receptionTaskNumber = 0;
 
     private int kitchenTaskNumber = 0;
@@ -27,7 +25,6 @@ public class CreateTask : MonoBehaviour
     private int meetingRoomTaskNumber = 0;
 
     private int mainOfficeTaskNumber = 0;
-
 
     private float receptionOffset = 0;
 
@@ -44,7 +41,6 @@ public class CreateTask : MonoBehaviour
     public GameObject kitchen;
 
     public GameObject reception;
-
 
     private int allTasksNumber = 0;
 
@@ -147,7 +143,7 @@ public class CreateTask : MonoBehaviour
         meetingRoom.SetActive(true);
     }
 
-    public void HideAllTasks()
+    public void HideAllTasks() //Method used to hide all tasks when player is not in any of the rooms
     {
         mainOffice.SetActive(false);
 
@@ -158,7 +154,7 @@ public class CreateTask : MonoBehaviour
         meetingRoom.SetActive(false);
     }
 
-    public void UpdateBoardClick()
+    public void UpdateBoardClick() //Refreshes the board once player presses a button
     {
         allTasksDoneNumber += 1;
 
@@ -175,7 +171,7 @@ public class CreateTask : MonoBehaviour
         BoardTaskNumberText.text = "Total Tasks Completed: " + allTasksDoneNumber + "/" + allTasksNumber;
     }
 
-    public void ToggleBoard()
+    public void ToggleBoard() //Method used to turn the task board On and Off
     {
         if (boardActive == true)
         {
