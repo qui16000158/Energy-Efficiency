@@ -77,7 +77,7 @@ public class CreateTask : MonoBehaviour
 
             receptionTaskNumber += 1;
 
-            receptionOffset += 10f; // Each loop has and offsett float number which increases everytime the loop runs.The purpose of this offset is to create spacing between the instantiated text objects.
+            receptionOffset += 13f; // Each loop has and offsett float number which increases everytime the loop runs.The purpose of this offset is to create spacing between the instantiated text objects.
 
             allTasksNumber += 1;
         }
@@ -88,7 +88,7 @@ public class CreateTask : MonoBehaviour
 
             kitchenTaskNumber += 1;
 
-            kitchenOffset += 10f;
+            kitchenOffset += 13f;
 
             allTasksNumber += 1;
 
@@ -100,7 +100,7 @@ public class CreateTask : MonoBehaviour
 
             meetingRoomTaskNumber += 1;
 
-            meetingRoomOffset += 10f;
+            meetingRoomOffset += 13f;
 
             allTasksNumber += 1;
 
@@ -112,7 +112,7 @@ public class CreateTask : MonoBehaviour
 
             mainOfficeTaskNumber += 1;
 
-            mainOfficeOffset += 10f;
+            mainOfficeOffset += 13f;
 
             allTasksNumber += 1;
 

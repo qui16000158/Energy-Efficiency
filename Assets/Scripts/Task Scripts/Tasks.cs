@@ -51,7 +51,7 @@ public class Tasks : ScriptableObject
 
         newBoardTaskText = Instantiate(boardPrefab, parentBoardObject.transform);
 
-        boardOffset -= 4f;
+        boardOffset -= 2f;
 
         newBoardTaskText.transform.position -= Vector3.up * boardOffset;
 

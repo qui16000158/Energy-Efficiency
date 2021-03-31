@@ -15,5 +15,5 @@ public class QuizQuestion : ScriptableObject
 
     public int correctAnswer; //1, 2 ,3 (refers to A, B or C)
 
-    public int scoreAmount;
+    public int scoreAmount; //How much score for answering correctly 
 }
