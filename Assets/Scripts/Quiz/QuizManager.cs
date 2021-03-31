@@ -149,7 +149,7 @@ public class QuizManager : MonoBehaviour
 
         nextButton.SetActive(true);
 
-        if (userAnswer == correctQuestionAnswer)
+        if (userAnswer == correctQuestionAnswer) // If correct 
         {
             AddScore(questionScore);
 
@@ -236,14 +236,14 @@ public class QuizManager : MonoBehaviour
         answerButtonsParent.SetActive(false);
     }
 
-    private void AddScore(int scoreAmount) 
+    private void AddScore(int scoreAmount) //Method used to add score within the HighScore manager
     {
         highScoreManager.GetComponent<HighScore>().IncreaseScore(scoreAmount);
 
         totalScore += scoreAmount;
     }
 
-    private void HighScoreVisibleTrue()
+    private void HighScoreVisibleTrue() //Method used to enable the highscore visibility on canvas
     {
         scoreNameInput.SetActive(true);
 
@@ -254,7 +254,7 @@ public class QuizManager : MonoBehaviour
         scoreLoadButton.SetActive(true);      
     }
 
-    private void HighScoreVisibleFalse()
+    private void HighScoreVisibleFalse() //Method used to disable the highscore visibility on canvas
     {
         scoreNameInput.SetActive(false);
 
@@ -265,7 +265,7 @@ public class QuizManager : MonoBehaviour
         scoreLoadButton.SetActive(false);
     }
 
-    private void EndQuiz()
+    private void EndQuiz() //Method used to end the quiz, it will display your score, enable end game UI like highscore
     {
         questionText.text = "This is the end of the Quiz." + "\n" + "You have scored: " + totalScore + " points";
 
@@ -282,7 +282,7 @@ public class QuizManager : MonoBehaviour
         PlayEndQuizSound();
     }
 
-    public void ResetQuiz() 
+    public void ResetQuiz() //This method is used to reset the quiz, it will be executed whenever the player closes the quiz or restarts it using the button, it resets the quiz including score and current question number
     {
         questionNumber = 0;
 
@@ -307,15 +307,15 @@ public class QuizManager : MonoBehaviour
         nextButton.SetActive(false);
     }
 
-    public void OpenQuiz()
+    public void OpenQuiz() //Method used to make the quiz enabled on the canvas
     {
         quizCanvas.SetActive(true);
 
         ResetQuiz();
     }
 
-    public void ExitQuiz()
-    {
+    public void ExitQuiz() //Method used to make the quiz disabled on the canvas
+    {               
         ResetQuiz();
 
         quizCanvas.SetActive(false);
