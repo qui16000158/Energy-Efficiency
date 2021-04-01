@@ -70,9 +70,4 @@ public class VantagePoint : MonoBehaviour
             clickCollider.enabled = true;
         }
     }
-
-    public void ConfirmLocationEnter()
-    {
-        print("Entering" + gameObject.name);
-    }
 }

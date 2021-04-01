@@ -10,9 +10,6 @@ public class PlayerView : MonoBehaviour
     public List<GameObject> previousVantage;
     GameObject playerCamera;
 
-    public float timeToTravel = 0.5f;
-    public float timeToTurn = 0.5f;
-
     public UnityEvent OnStartMoving;
     public UnityEvent OnStopMoving;
 
@@ -89,15 +86,5 @@ public class PlayerView : MonoBehaviour
 
             yield return null;
         }
-    }
-
-    public void ConfirmStartMoving()
-    {
-        print("Starting movement.");
-    }
-
-    public void ConfirmStopMoving()
-    {
-        print("Stopping movement.");
     }
 }
