@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class CreateTask : MonoBehaviour
 {
@@ -53,6 +54,8 @@ public class CreateTask : MonoBehaviour
     public GameObject taskBoard;
 
     public GameObject taskCanvas;
+
+    public UnityEvent allTasksDone;
 
 
     private void Awake()
@@ -166,6 +169,8 @@ public class CreateTask : MonoBehaviour
         if(allTasksDoneNumber == allTasksNumber)
         {
             BoardTaskNumberText.color = Color.green;
+            //print("All done!");
+            allTasksDone.Invoke();
         }
 
         BoardTaskNumberText.text = "Total Tasks Completed: " + allTasksDoneNumber + "/" + allTasksNumber;

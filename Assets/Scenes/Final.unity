@@ -16432,7 +16432,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1513062058
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24443,6 +24443,20 @@ MonoBehaviour:
   BoardTaskNumberText: {fileID: 7076439225190139714}
   taskBoard: {fileID: 7076439226101483889}
   taskCanvas: {fileID: 7127018574110049004}
+  allTasksDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1513062057}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &7127018574065490480
 GameObject:
   m_ObjectHideFlags: 0
